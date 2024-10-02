@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sistema de Puntos y Recompensas"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center" />
+
+    <!-- Mostrar el puntaje total -->
+    <TextView
+        android:id="@+id/totalPoints"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Puntos Totales: 0"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp" />
+
+    <!-- Botón para incrementar los puntos (simulación de actividad completada) -->
+    <Button
+        android:id="@+id/incrementPointsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incrementar Puntos"
+        android:layout_gravity="center" />
+
+    <!-- Texto para mostrar el mensaje de motivación -->
+    <TextView
+        android:id="@+id/motivationMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textSize="16sp" />
+</LinearLayout>

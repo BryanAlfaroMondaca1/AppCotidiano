@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/frequencyInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Frecuencia (en minutos)"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/activateReminderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activar Recordatorio" />
+
+    <Button
+        android:id="@+id/deactivateReminderButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desactivar Recordatorio" />
+
+    <TextView
+        android:id="@+id/reminderStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="Estado del recordatorio: No activado" />
+</LinearLayout>

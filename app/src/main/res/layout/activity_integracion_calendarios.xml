@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <!-- Campo para mostrar la fecha seleccionada -->
+    <Button
+        android:id="@+id/selectDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Fecha" />
+
+    <!-- Campo para mostrar la hora seleccionada -->
+    <Button
+        android:id="@+id/selectTimeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Hora"
+        android:layout_marginTop="10dp" />
+
+    <!-- Botón para agregar la actividad al calendario -->
+    <Button
+        android:id="@+id/addToCalendarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Añadir al Calendario"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center" />
+</LinearLayout>
