@@ -1,6 +1,85 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
-</LinearLayout>
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Título Principal -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Análisis y Recomendaciones"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="16dp" />
+
+        <!-- Mensaje Predeterminado -->
+        <TextView
+            android:id="@+id/predeterminedMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Te recomendamos dedicar más tiempo a actividades que equilibren tu jornada laboral con un descanso saludable y momentos de ejercicio."
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="#D32F2F" />
+
+        <!-- Mensaje de Elección de Enfoque -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecciona un área en la que te quieras enfocar:"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:paddingTop="24dp" />
+
+        <!-- Botones de Selección de Recomendación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/deporteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deporte"
+                android:layout_margin="8dp" />
+
+            <Button
+                android:id="@+id/trabajoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trabajo"
+                android:layout_margin="8dp" />
+
+            <Button
+                android:id="@+id/estudioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estudios"
+                android:layout_margin="8dp" />
+        </LinearLayout>
+
+        <!-- Mensaje de Recomendación Basado en la Selección -->
+        <TextView
+            android:id="@+id/focusedRecommendation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:gravity="center"
+            android:paddingTop="24dp"
+            android:layout_marginTop="16dp"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+</ScrollView>

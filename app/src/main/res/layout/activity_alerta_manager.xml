@@ -1,33 +1,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:padding="16dp"
-    android:background="@drawable/a5ce2023b63173e0faccd0ecc1e854b8"
-    android:orientation="vertical">
+    android:background="@android:color/white">
 
-    <EditText
-        android:id="@+id/frequencyInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Frecuencia (en minutos)"
-        android:inputType="number" />
-
-    <Button
-        android:id="@+id/activateReminderButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activar Recordatorio" />
-
-    <Button
-        android:id="@+id/deactivateReminderButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Desactivar Recordatorio" />
-
+    <!-- Reloj Digital que muestra la Hora Actual -->
     <TextView
-        android:id="@+id/reminderStatus"
+        android:id="@+id/clockView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:text="Estado del recordatorio: No activado" />
+        android:textSize="48sp"
+        android:textColor="#D32F2F"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:text="00:00:00" />
+
+    <!-- Temporizador para mostrar el tiempo restante -->
+    <TextView
+        android:id="@+id/timerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:textColor="#4CAF50"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:text="Tiempo Restante: 00:00" />
+
+    <!-- Mensaje de Alerta -->
+    <TextView
+        android:id="@+id/alertMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:paddingTop="24dp"
+        android:gravity="center"
+        android:text="¡Mantente enfocado en tu próxima tarea!"
+        android:layout_gravity="center" />
+
 </LinearLayout>
