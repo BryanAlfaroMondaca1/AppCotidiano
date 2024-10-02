@@ -2,7 +2,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@drawable/a5ce2023b63173e0faccd0ecc1e854b8"
     android:orientation="vertical">
 
     <!-- Título -->
@@ -24,6 +23,16 @@
         android:textSize="16sp"
         android:gravity="center"
         android:layout_marginTop="20dp" />
+
+    <!-- Barra de Progreso -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:progress="0"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_bar_custom" />
 
     <!-- Botón para incrementar los puntos (simulación de actividad completada) -->
     <Button
