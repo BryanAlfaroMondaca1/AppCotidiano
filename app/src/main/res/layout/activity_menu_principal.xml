@@ -2,35 +2,55 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/a5ce2023b63173e0faccd0ecc1e854b8"
     android:gravity="center">
 
     <Button
         android:id="@+id/registroButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registro de Actividades" />
+        android:text="Registro de Actividades"
+        style="@style/ShadowBoldButton" />
 
     <Button
         android:id="@+id/alertasButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recordatorios y Alertas" />
+        android:text="Recordatorios y Alertas"
+        style="@style/ShadowBoldButton" />
 
     <Button
         android:id="@+id/analisisButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Análisis y Recomendaciones" />
+        android:text="Análisis y Recomendaciones"
+        style="@style/ShadowBoldButton" />
 
     <Button
         android:id="@+id/gamificacionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gamificación" />
+        android:text="Gamificación"
+        style="@style/ShadowBoldButton" />
 
     <Button
         android:id="@+id/calendarioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Integración con Calendario" />
+        android:text="Integración con Calendario"
+        style="@style/ShadowBoldButton" />
+    <Button
+        android:id="@+id/registroButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registro de Actividades"
+        android:textStyle="bold"
+        android:background="@drawable/button_background"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3" />
+
+
+
 </LinearLayout>

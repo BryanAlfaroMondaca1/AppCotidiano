@@ -1,0 +1,30 @@
+<resources>
+    <!-- Tema de la Aplicación -->
+    <style name="Theme.CotidianoApp" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#B71C1C</item> <!-- Rojo oscuro -->
+        <item name="colorPrimaryDark">#880E4F</item> <!-- Rojo más oscuro para la barra de estado -->
+        <item name="colorAccent">#D32F2F</item> <!-- Rojo brillante para los botones -->
+    </style>
+
+    <!-- Estilo para Botones Rojos -->
+    <style name="RedButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">#D32F2F</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!-- Estilo para TextViews Centrados -->
+    <style name="CenteredText" parent="Widget.AppCompat.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#B71C1C</item> <!-- Color Rojo -->
+    </style>
+    <style name="ShadowBoldButton">
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">3</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">#D32F2F</item> <!-- Color de fondo rojo -->
+    </style>
+</resources>
