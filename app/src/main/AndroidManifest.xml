@@ -1,51 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.example.cotidiano">
+    <!-- Permisos necesarios -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
-        android:theme="@style/Theme.AppCotidiano"
         android:allowBackup="true"
-
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_large"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_large_round"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
-        tools:targetApi="31">
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".ReminderReceiver"
+            android:name=".BroadcastReceiver"
             android:exported="false" />
-        <activity
-            android:name=".IntegracionCalendariosActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GamificacionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AnalisisActivity"
-            android:exported="false" />
-        <activity android:name=".AlertaManagerActivity" />
-        <receiver android:name=".ReminderReceiver" android:exported="false" />
-        <activity
-            android:name=".RegistroActividadesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MenuPrincipalActivity"
-            android:exported="false" />
+        <!-- MainActivity con android:exported="true" porque es la actividad de inicio -->
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- Otras actividades con android:exported="false" -->
+        <activity
+            android:name=".MenuPrincipalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroActividadesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecordatoriosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnalisisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GamificacionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CalendarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResumenSemanalActivity"
+            android:exported="false" /> <!-- BroadcastReceiver configurado con android:exported -->
+        <receiver
+            android:name=".AlarmReceiver"
+            android:exported="false" />
     </application>
 
 </manifest>
