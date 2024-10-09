@@ -1,48 +1,50 @@
-package com.example.appcotidiano;
+package com.example.cotidiano;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.HashMap;
+
 public class AnalisisActivity extends AppCompatActivity {
+
+    private TextView tvMensajeMotivacion;
+    private TextView tvAnalisisTrabajo, tvAnalisisEstudio, tvAnalisisEjercicio, tvAnalisisDescanso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analisis);
 
-        // Referencias a los elementos del diseño
-        TextView predeterminedMessage = findViewById(R.id.predeterminedMessage);
-        Button deporteButton = findViewById(R.id.deporteButton);
-        Button trabajoButton = findViewById(R.id.trabajoButton);
-        Button estudioButton = findViewById(R.id.estudioButton);
-        TextView focusedRecommendation = findViewById(R.id.focusedRecommendation);
+        tvMensajeMotivacion = findViewById(R.id.tvMensajeMotivacion);
+        tvAnalisisTrabajo = findViewById(R.id.tvAnalisisTrabajo);
+        tvAnalisisEstudio = findViewById(R.id.tvAnalisisEstudio);
+        tvAnalisisEjercicio = findViewById(R.id.tvAnalisisEjercicio);
+        tvAnalisisDescanso = findViewById(R.id.tvAnalisisDescanso);
 
-        // Mensaje predeterminado
-        predeterminedMessage.setText("Te recomendamos dedicar más tiempo a actividades que equilibren tu jornada laboral con un descanso saludable y momentos de ejercicio.");
+        // Mostrar un mensaje de motivación
+        tvMensajeMotivacion.setText("¡Genial! Estás organizando bien tus actividades.");
 
-        // Configuración de las recomendaciones específicas
-        deporteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                focusedRecommendation.setText("Para mejorar tu salud y productividad, te sugerimos incorporar 30 minutos de ejercicio al día. ¡Tu cuerpo y mente te lo agradecerán!");
-            }
-        });
+        // Generar datos de ejemplo para el análisis
+        HashMap<String, Integer> datosActividades = obtenerDatosEjemplo();
+        actualizarEstadisticas(datosActividades);
+    }
 
-        trabajoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                focusedRecommendation.setText("Para un mejor rendimiento laboral, organiza tus tareas en bloques de 90 minutos y toma descansos breves entre cada bloque para mantener la concentración.");
-            }
-        });
+    private HashMap<String, Integer> obtenerDatosEjemplo() {
+        // Datos de ejemplo: Actividad y la cantidad de tiempo en minutos
+        HashMap<String, Integer> datos = new HashMap<>();
+        datos.put("Trabajo", 120);     // 120 minutos en Trabajo
+        datos.put("Estudio", 90);      // 90 minutos en Estudio
+        datos.put("Ejercicio", 60);    // 60 minutos en Ejercicio
+        datos.put("Descanso", 30);     // 30 minutos en Descanso
+        return datos;
+    }
 
-        estudioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                focusedRecommendation.setText("Si deseas mejorar en tus estudios, te sugerimos dividir las sesiones de estudio en periodos de 50 minutos y tomar descansos de 10 minutos para evitar la fatiga mental.");
-            }
-        });
+    private void actualizarEstadisticas(HashMap<String, Integer> datos) {
+        // Actualizar cada TextView con los datos de las actividades
+        tvAnalisisTrabajo.setText("Tiempo en Trabajo: " + datos.get("Trabajo") + " min");
+        tvAnalisisEstudio.setText("Tiempo en Estudio: " + datos.get("Estudio") + " min");
+        tvAnalisisEjercicio.setText("Tiempo en Ejercicio: " + datos.get("Ejercicio") + " min");
+        tvAnalisisDescanso.setText("Tiempo en Descanso: " + datos.get("Descanso") + " min");
     }
 }

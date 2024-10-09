@@ -1,53 +1,89 @@
-package com.example.appcotidiano;
+package com.example.cotidiano;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GamificacionActivity extends AppCompatActivity {
-    private int totalPoints = 0;
-    private SharedPreferences preferences;
-    private static final int MAX_POINTS = 100; // Meta máxima de puntos
+
+    private TextView tvTiempoRestante;
+    private Button btnIniciarPomodoro, btnDetenerPomodoro;
+    private CountDownTimer pomodoroTimer;
+    private boolean isRunning = false;
+    private long tiempoRestanteEnMilisegundos = 1500000; // 25 minutos en milisegundos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamificacion);
 
-        TextView totalPointsTextView = findViewById(R.id.totalPoints);
-        TextView motivationMessage = findViewById(R.id.motivationMessage);
-        Button incrementPointsButton = findViewById(R.id.incrementPointsButton);
-        ProgressBar progressBar = findViewById(R.id.progressBar);
+        // Enlazar componentes del layout
+        tvTiempoRestante = findViewById(R.id.tvTiempoRestante);
+        btnIniciarPomodoro = findViewById(R.id.btnIniciarPomodoro);
+        btnDetenerPomodoro = findViewById(R.id.btnDetenerPomodoro);
 
-        // Obtener los puntos almacenados en SharedPreferences
-        preferences = getSharedPreferences("Gamification", MODE_PRIVATE);
-        totalPoints = preferences.getInt("totalPoints", 0);
-        totalPointsTextView.setText("Puntos Totales: " + totalPoints);
-
-        // Inicializar la barra de progreso
-        progressBar.setMax(MAX_POINTS);
-        progressBar.setProgress(totalPoints);
-
-        // Incrementar puntos al presionar el botón
-        incrementPointsButton.setOnClickListener(v -> {
-            totalPoints += 10; // Incrementar por cada acción
-            preferences.edit().putInt("totalPoints", totalPoints).apply();
-            totalPointsTextView.setText("Puntos Totales: " + totalPoints);
-
-            // Actualizar la barra de progreso
-            progressBar.setProgress(totalPoints);
-
-            // Mostrar mensaje motivacional si se alcanza cierta meta
-            if (totalPoints >= MAX_POINTS) {
-                motivationMessage.setText("¡Felicidades! Has alcanzado la meta de 100 puntos.");
-            } else if (totalPoints >= 50) {
-                motivationMessage.setText("¡Muy bien! Ya tienes 50 puntos.");
-            } else {
-                motivationMessage.setText("");
+        // Configurar botón de iniciar
+        btnIniciarPomodoro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isRunning) {
+                    iniciarPomodoro();
+                }
             }
         });
+
+        // Configurar botón de detener
+        btnDetenerPomodoro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                detenerPomodoro();
+            }
+        });
+    }
+
+    // Método para iniciar el Pomodoro
+    private void iniciarPomodoro() {
+        pomodoroTimer = new CountDownTimer(tiempoRestanteEnMilisegundos, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                tiempoRestanteEnMilisegundos = millisUntilFinished;
+                actualizarTemporizador();
+            }
+
+            @Override
+            public void onFinish() {
+                isRunning = false;
+                Toast.makeText(GamificacionActivity.this, "¡Pomodoro Completado! ¡Toma un descanso!", Toast.LENGTH_SHORT).show();
+                tvTiempoRestante.setText("00:00");
+            }
+        }.start();
+
+        isRunning = true;
+        btnIniciarPomodoro.setEnabled(false);
+        btnDetenerPomodoro.setEnabled(true);
+    }
+
+    // Método para detener el Pomodoro
+    private void detenerPomodoro() {
+        if (pomodoroTimer != null) {
+            pomodoroTimer.cancel();
+            isRunning = false;
+            btnIniciarPomodoro.setEnabled(true);
+            btnDetenerPomodoro.setEnabled(false);
+            Toast.makeText(GamificacionActivity.this, "Pomodoro detenido.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // Actualizar el temporizador en el TextView
+    private void actualizarTemporizador() {
+        int minutos = (int) (tiempoRestanteEnMilisegundos / 1000) / 60;
+        int segundos = (int) (tiempoRestanteEnMilisegundos / 1000) % 60;
+
+        String tiempoFormateado = String.format("%02d:%02d", minutos, segundos);
+        tvTiempoRestante.setText(tiempoFormateado);
     }
 }
