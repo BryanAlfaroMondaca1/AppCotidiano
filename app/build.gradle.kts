@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.cotidiano"
+    namespace = "com.example.cotidianoorganiza"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.cotidiano"
+        applicationId = "com.example.cotidianoorganiza"
         minSdk = 23
         targetSdk = 34
         versionCode = 1
@@ -33,7 +33,6 @@ android {
 
 dependencies {
 
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
@@ -41,5 +40,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
 }

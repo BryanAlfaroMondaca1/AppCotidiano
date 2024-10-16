@@ -1,32 +1,12 @@
 <resources>
-
-    <!-- Tema principal de la aplicación -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Definir colores principales -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/backgroundColor</item>
-        <item name="android:textColorPrimary">@color/textColorPrimary</item>
-        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+    <!-- Tema general de la aplicación sin Material You -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Definiciones generales -->
     </style>
 
-    <!-- Tema personalizado para botones -->
-    <style name="ButtonStyle">
-        <item name="android:layout_margin">8dp</item>
-        <item name="android:backgroundTint">@color/buttonColor</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:padding">12dp</item>
-        <item name="android:elevation">4dp</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
+    <!-- Estilo personalizado para los botones -->
+    <style name="BotonNegro">
+        <item name="android:background">#000000</item> <!-- Fondo negro -->
+        <item name="android:textColor">#FFFFFF</item> <!-- Texto blanco -->
     </style>
-
-    <!-- Tema para TextViews personalizados -->
-    <style name="TextViewTitle">
-        <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:textColor">@color/colorPrimary</item>
-    </style>
-
 </resources>

@@ -1,3 +1,39 @@
 <resources>
-    <string name="app_name">Cotidiano</string>
+    <string name="app_name">CotidianoOrganiza</string>
+
+    <string-array name="categorias_array">
+        <item>Trabajo</item>
+        <item>Estudio</item>
+        <item>Ejercicio</item>
+        <item>Descanso</item>
+        <item>Otro</item>
+    </string-array>
+
+    <string-array name="prioridades_array">
+        <item>Alta</item>
+        <item>Media</item>
+        <item>Baja</item>
+    </string-array>
+
+    <string-array name="repeticion_array">
+        <item>No repetir</item>
+        <item>Diaria</item>
+        <item>Semanal</item>
+        <item>Mensual</item>
+    </string-array>
+
+    <string-array name="tipos_alerta_array">
+        <item>Recordatorio de tarea</item>
+        <item>Descanso</item>
+        <item>Inicio de actividad</item>
+        <item>Reunión</item>
+        <item>Otro</item>
+    </string-array>
+
+    <string-array name="frecuencia_alerta_array">
+        <item>Una vez</item>
+        <item>Diaria</item>
+        <item>Semanal</item>
+        <item>Mensual</item>
+    </string-array>
 </resources>

@@ -1,85 +1,55 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    android:orientation="vertical"
     android:padding="16dp">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tituloAnalisis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:text="Selecciona tu perfil"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp"/>
 
-        <!-- Título Principal -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Análisis y Recomendaciones"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:paddingBottom="16dp" />
+    <!-- Botón para trabajadores -->
+    <Button
+        android:id="@+id/btnTrabajador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F44336"
+        android:text="Trabajador" />
 
-        <!-- Mensaje Predeterminado -->
-        <TextView
-            android:id="@+id/predeterminedMessage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Te recomendamos dedicar más tiempo a actividades que equilibren tu jornada laboral con un descanso saludable y momentos de ejercicio."
-            android:textSize="16sp"
-            android:gravity="center"
-            android:padding="16dp"
-            android:textColor="#D32F2F" />
+    <!-- Botón para estudiantes -->
+    <Button
+        android:id="@+id/btnEstudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F44336"
+        android:text="Estudiante"
+        android:layout_marginTop="8dp" />
 
-        <!-- Mensaje de Elección de Enfoque -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Selecciona un área en la que te quieras enfocar:"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:paddingTop="24dp" />
+    <!-- Botón para deportistas -->
+    <Button
+        android:id="@+id/btnDeportista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F44336"
+        android:text="Deportista"
+        android:layout_marginTop="8dp" />
 
-        <!-- Botones de Selección de Recomendación -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="16dp">
+    <!-- Texto que mostrará el plan de optimización -->
+    <TextView
+        android:id="@+id/planOptimizacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aquí aparecerá tu plan de optimización"
+        android:textSize="16sp"
+        android:paddingTop="16dp" />
 
-            <Button
-                android:id="@+id/deporteButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Deporte"
-                android:layout_margin="8dp" />
+</LinearLayout>
 
-            <Button
-                android:id="@+id/trabajoButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Trabajo"
-                android:layout_margin="8dp" />
-
-            <Button
-                android:id="@+id/estudioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Estudios"
-                android:layout_margin="8dp" />
-        </LinearLayout>
-
-        <!-- Mensaje de Recomendación Basado en la Selección -->
-        <TextView
-            android:id="@+id/focusedRecommendation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="16sp"
-            android:gravity="center"
-            android:paddingTop="24dp"
-            android:layout_marginTop="16dp"
-            android:textColor="#000000" />
-
-    </LinearLayout>
-</ScrollView>

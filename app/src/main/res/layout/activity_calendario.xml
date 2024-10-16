@@ -1,15 +1,26 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center">
+    android:padding="16dp">
 
-    <Button
-        android:id="@+id/btnAbrirCalendario"
-        android:layout_width="wrap_content"
+    <!-- CalendarView que muestra el calendario -->
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Abrir Google Calendar"/>
+        android:layout_marginBottom="16dp"
+        android:dateTextAppearance="?android:attr/textAppearanceLarge" />
+
+    <!-- Botón para abrir Google Calendar -->
+    <Button
+        android:id="@+id/btnOpenGoogleCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F44336"
+        android:text="Abrir Google Calendar"
+        android:textColor="#FFFFFF"
+        android:background="#4285F4" /> <!-- Color típico de Google -->
 
 </LinearLayout>

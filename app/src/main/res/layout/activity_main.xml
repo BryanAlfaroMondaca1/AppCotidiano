@@ -1,12 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@drawable/fondo"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/registroActividades"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello, World!" />
+        android:backgroundTint="#F44336"
+
+        android:text="Registro de Actividades" />
+
+    <Button
+        android:id="@+id/alertas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F44336"
+        android:text="Alertas y Recordatorios" />
+
+    <Button
+        android:id="@+id/analisis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F44336"
+        android:text="Análisis y Recomendaciones" />
+
+    <Button
+        android:id="@+id/gamificacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F44336"
+        android:text="Gamificación" />
+
+    <Button
+        android:id="@+id/calendario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F44336"
+        android:text="Calendario" />
+
 
 </LinearLayout>

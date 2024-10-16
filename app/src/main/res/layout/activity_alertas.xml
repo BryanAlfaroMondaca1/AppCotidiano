@@ -1,87 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/fondo"
     android:layout_height="match_parent">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/fondo"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <EditText
-            android:id="@+id/nombreActividadInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre de la actividad" />
-
-        <EditText
-            android:id="@+id/descripcionInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Descripción (Opcional)" />
-
         <Spinner
-            android:id="@+id/categoriaSpinner"
+            android:id="@+id/tipoAlertaSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/mensajeAlertaInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mensaje de la Alerta" />
 
         <EditText
             android:id="@+id/fechaInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Fecha de inicio"
+            android:hint="Fecha"
             android:focusable="false"
             android:inputType="none" />
 
         <EditText
-            android:id="@+id/horaInicioInput"
+            android:id="@+id/horaInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Hora de inicio"
+            android:hint="Hora"
             android:focusable="false"
             android:inputType="none" />
 
-        <EditText
-            android:id="@+id/duracionInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Duración (Horas o Minutos)"
-            android:inputType="number" />
-
         <Spinner
-            android:id="@+id/repeticionSpinner"
+            android:id="@+id/frecuenciaAlertaSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Spinner
-            android:id="@+id/prioridadSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <Switch
+            android:id="@+id/activarAlertaSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activar Alerta" />
 
         <Button
-            android:id="@+id/guardarButton"
+            android:id="@+id/guardarAlertaButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#F44336"
-            android:text="Guardar Actividad"
-            android:textColorLink="#FFFFFF" />
+            android:text="Guardar Alerta" />
 
         <Button
-            android:id="@+id/cancelarButton"
+            android:id="@+id/cancelarAlertaButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:backgroundTint="#F44336"
-            android:text="Cancelar" />
+            android:text="Cancelar"
+            android:layout_marginTop="8dp" />
 
-        <!-- ListView para mostrar las actividades registradas -->
+        <!-- Lista de alertas -->
         <ListView
-            android:id="@+id/actividadesListView"
+            android:id="@+id/listaAlertas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp" />
+
     </LinearLayout>
 
 </ScrollView>

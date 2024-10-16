@@ -1,54 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:background="@drawable/fondo"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
 
-    <!-- Título -->
+    <!-- Temporizador del Pomodoro -->
     <TextView
+        android:id="@+id/temporizadorText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sistema de Puntos y Recompensas"
-        android:textSize="18sp"
+        android:text="25:00"
+        android:textSize="36sp"
         android:textStyle="bold"
-        android:gravity="center"
-        android:layout_gravity="center" />
+        android:paddingBottom="16dp" />
 
-    <!-- Mostrar el puntaje total -->
-    <TextView
-        android:id="@+id/totalPoints"
+    <!-- Botón para iniciar el Pomodoro -->
+    <Button
+        android:id="@+id/iniciarPomodoroButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Puntos Totales: 0"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:layout_marginTop="20dp" />
+        android:backgroundTint="#F44336"
+        android:text="Iniciar Pomodoro" />
 
-    <!-- Barra de Progreso -->
+    <!-- Barra de Progreso para el avance diario o semanal -->
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/barraProgreso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:progress="0"
-        android:max="100"
-        android:progressDrawable="@drawable/progress_bar_custom" />
+        android:max="4"
+        style="?android:attr/progressBarStyleHorizontal" />
 
-    <!-- Botón para incrementar los puntos (simulación de actividad completada) -->
-    <Button
-        android:id="@+id/incrementPointsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Incrementar Puntos"
-        android:layout_gravity="center" />
-
-    <!-- Texto para mostrar el mensaje de motivación -->
+    <!-- Frases motivacionales que aparecerán después de cada Pomodoro -->
     <TextView
-        android:id="@+id/motivationMessage"
+        android:id="@+id/frasesMotivacionalesText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:text=""
-        android:textSize="16sp" />
+        android:text="Aquí aparecerán frases motivacionales"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp" />
+
+    <!-- Tablero de recompensas para mostrar los logros obtenidos -->
+    <TextView
+        android:id="@+id/tableroRecompensasText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tablero de Recompensas:\n"
+        android:textSize="16sp"
+        android:paddingTop="16dp" />
+
 </LinearLayout>

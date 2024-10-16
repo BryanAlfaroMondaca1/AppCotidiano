@@ -1,37 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pexels39231305851808"
+    android:background="@drawable/fondo"
+
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="243dp"
         android:layout_height="wrap_content"
-        android:text="APPCOTIDIANO"
-        android:textSize="40sp" />
+        android:background="#A1000000"
+        android:backgroundTint="#FF5454"
+        android:lineSpacingExtra="8sp"
+        android:text="COTIDIANO ORGANIZA"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:typeface="normal" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="279dp"
+        android:layout_height="124dp"
+        app:srcCompat="@android:drawable/star_big_off" />
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#9E6262"
-        android:hint="Usuario" />
+        android:layout_width="192dp"
+        android:layout_height="60dp"
+        android:background="#F44336"
+        android:backgroundTint="#050505"
+        android:backgroundTintMode="add"
+        android:foregroundTint="#FFFFFF"
+        android:foregroundTintMode="src_over"
+        android:hint="Username"
+        android:textAlignment="center"
+        android:textColor="#00FFFCFC"
+        android:textStyle="bold|italic"
+
+        />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:inputType="textPassword" />
+        android:layout_width="229dp"
+        android:layout_height="52dp"
+        android:background="#FF5722"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="wrap_content"
+        android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:text="Ingresar" />
-
+        android:backgroundTintMode="multiply"
+        android:text="Login"
+        android:textColorLink="#000000"
+        android:textStyle="bold" />
 
 </LinearLayout>
